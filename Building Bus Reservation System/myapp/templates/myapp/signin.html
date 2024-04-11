@@ -1,0 +1,155 @@
+{% extends 'myapp/base.html' %} {% block content %}
+<!-- Navbar-->
+<header class="header">
+    <nav class="navbar navbar-expand-lg navbar-light py-3">
+        <div class="container col-md-3 mb-md-0">
+            <!-- Navbar Brand -->
+            <a href="#" class="navbar-brand">
+               <h1>Kiruba Bookings</h1> 
+            </a>
+        </div>
+    </nav>
+</header>
+
+
+<div class="container">
+    <div class="row py-5 mt-4 align-items-center">
+
+        <!-- For Demo Purpose -->
+        <div class="col-md-5 pr-lg-5 mb-5 mb-md-0">
+            <img src="https://img.freepik.com/free-vector/isometric-person-complaining-about-product_23-2148950260.jpg?w=740&t=st=1712652732~exp=1712653332~hmac=c0e0135aa3f2b879161c9e380d092664ab82425b0cef3683b3090a17f6a0182d" alt="" class="img-fluid mb-3 d-none d-md-block">
+            <h1>Login your Account</h1>
+        </div>
+
+        <!-- Registeration Form -->
+        <div class="col-md-7 col-lg-6 ml-auto">
+            <form action="{% url 'signin' %}" method="post" id="signin-form">
+                {% csrf_token %}
+
+     
+                    <div class="input-group col-lg-6 mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                <i class="fa fa-user text-muted"></i>
+                            </span>
+                        </div>
+                        <input id="username" type="text" name="name" placeholder="Name" class="form-control bg-white border-left-0 border-md">
+                    </div>
+              
+                    <!-- <div class="input-group col-lg-12 mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                <i class="fa fa-envelope text-muted"></i>
+                            </span>
+                        </div>
+                        <input id="email" type="email" name="email" placeholder="Email Address" class="form-control bg-white border-left-0 border-md">
+                    </div>
+ -->
+                
+                    <div class="input-group col-lg-6 mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                <i class="fa fa-lock text-muted"></i>
+                            </span>
+                        </div>
+                        <input id="password" type="password" name="password" placeholder="Password" class="form-control bg-white border-left-0 border-md">
+                    </div>
+
+            
+                    <!-- <div class="input-group col-lg-6 mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                <i class="fa fa-lock text-muted"></i>
+                            </span>
+                        </div>
+                        <input id="passwordConfirmation" type="text" name="passwordConfirmation" placeholder="Confirm Password" class="form-control bg-white border-left-0 border-md">
+                    </div>
+                    <div class="form-group col-lg-12 mx-auto mb-0">
+                        <button class="btn btn-link btn-floating mx-1" form="signin-form">Login</button>
+                  
+                    </div> -->
+                    <!-- <div class="card-footer text-center">
+                        <button class="btn btn-link btn-floating mx-1" form="signin-form">Login</button>
+                    </div> -->
+                    
+                <button type="button" class="btn btn-link btn-floating mx-1" form="signin-form">
+                    <i class="fab fa-github"></i>
+                  </button>
+                  <button type="submit" class="btn btn-primary btn-block mb-4 ">
+                    Sign in your account
+                  </button>
+    
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<style>
+    /*
+*
+* ==========================================
+* CUSTOM UTIL CLASSES
+* ==========================================
+*
+*/
+
+.border-md {
+    border-width: 2px;
+}
+
+.btn-facebook {
+    background: #405D9D;
+    border: none;
+}
+
+.btn-facebook:hover, .btn-facebook:focus {
+    background: #314879;
+}
+
+.btn-twitter {
+    background: #42AEEC;
+    border: none;
+}
+
+.btn-twitter:hover, .btn-twitter:focus {
+    background: #1799e4;
+}
+
+
+
+/*
+*
+* ==========================================
+* FOR DEMO PURPOSES
+* ==========================================
+*
+*/
+
+body {
+    min-height: 100vh;
+}
+
+.form-control:not(select) {
+    padding: 1.5rem 0.5rem;
+}
+
+select.form-control {
+    height: 52px;
+    padding-left: 0.5rem;
+}
+
+.form-control::placeholder {
+    color: #ccc;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+.form-control:focus {
+    box-shadow: none;
+}
+body{
+    border-color: #42AEEC;
+}
+</style>
+{% endblock %}
